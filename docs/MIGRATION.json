@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "slug": "coverage-threshold-contract",
+  "domain": "quality",
+  "guidance_group": "strong",
+  "source_commit": "1286096c10a23bbb04aca83679ae3c31f3326030",
+  "source_repository": "mytestapp20261001-collab/mytest-engineering-toolbox",
+  "source_repository_id": 1411411288,
+  "source_path": "tools/coverage-threshold-contract",
+  "root_path": ".",
+  "publication_status": "prepared_only; coordinator verifies final repository identity and remote CI",
+  "expected_repository": "mytestapp20261001-collab/coverage-threshold-contract",
+  "repository_id": null,
+  "preserved_files": [
+    {
+      "path": "OPTIONAL_MYTEST.md",
+      "size_bytes": 1475,
+      "sha256": "1abd2c34f485ecf360b7085ea52aad57ea02249f43e6465d075a8cfb5c77cf70",
+      "git_blob_sha1": "3c19ce9b618e26b8836591b37c4430589db71299",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/OPTIONAL_MYTEST.md"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 3691,
+      "sha256": "bf895c0cd672cfe763ba120220463b9bf3f2c70d386aecc127abf101182121ab",
+      "git_blob_sha1": "52a22efa1323b249134b5f55b81917b51e51e4de",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/README.md"
+    },
+    {
+      "path": "SKILL.md",
+      "size_bytes": 1614,
+      "sha256": "aeab2b6c6d716f9b343800b9c30b28ea5168f3380aa3676e227228c5ff613ccf",
+      "git_blob_sha1": "f9dc7f138c25007a68f3e776840b2bf99d714b66",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/SKILL.md"
+    },
+    {
+      "path": "examples/fail.json",
+      "size_bytes": 179,
+      "sha256": "fe48e1692945db37e1d84d742ac17b28f1e01f84253bf1b608275a8fb618a4cf",
+      "git_blob_sha1": "bb3f9a3c444c777da27b1d4823b8ef319cd39898",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/examples/fail.json"
+    },
+    {
+      "path": "examples/pass.json",
+      "size_bytes": 248,
+      "sha256": "edf57fd2d323c3c524332583035d9beca6f93673052fc4ef57d0a2247caafab7",
+      "git_blob_sha1": "5ca65aacd16446b9d2fe701734fa6085eff83b27",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/examples/pass.json"
+    },
+    {
+      "path": "test_tool.py",
+      "size_bytes": 4911,
+      "sha256": "e3b53d94f45b1b8c856a5c7be4b9fc1ba8eea30d07f0c6dfd9101f8c85054e6f",
+      "git_blob_sha1": "ee181d7f27a6df355fc770fcabff27ad1ebe11b8",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/test_tool.py"
+    },
+    {
+      "path": "tool.py",
+      "size_bytes": 5414,
+      "sha256": "bb857e735a71ff8797040e8e8277c5a4e626b592ed6278be8272b99506e4219e",
+      "git_blob_sha1": "e54a3bdf2c60e7d9927506c4ee6772aa3b4bc00b",
+      "utf8": true,
+      "source_path": "tools/coverage-threshold-contract/tool.py"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1076,
+      "sha256": "dce76471613629e93f3f98b7aaa6f72ff9adb88204a3f83d3045952017ab2f46",
+      "git_blob_sha1": "677c4463d59b560db9c1fde1052eff6eefa6441a",
+      "utf8": true,
+      "source_path": "LICENSE"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 62,
+      "sha256": "e4d5aecc4cd36f593c2e7f3dad08b24261b13466b898004a445614058d29d8de",
+      "git_blob_sha1": "fe9f8fb619601213cbfef4f6eadb5d413d8f7f01",
+      "utf8": true,
+      "source_path": ".gitignore"
+    }
+  ],
+  "readme_checks": [
+    {
+      "label": "README example",
+      "args": [
+        "-I",
+        "tool.py",
+        "examples/pass.json"
+      ],
+      "expected_exit": 0,
+      "output": "json",
+      "documented_command": "python3.12 -I tool.py examples/pass.json"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "-I",
+        "tool.py",
+        "examples/fail.json"
+      ],
+      "expected_exit": 1,
+      "output": "json",
+      "documented_command": "python3.12 -I tool.py examples/fail.json  # expected exit 1"
+    },
+    {
+      "label": "CLI help",
+      "args": [
+        "tool.py",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "output": "help"
+    },
+    {
+      "label": "CLI missing input",
+      "args": [
+        "tool.py"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    },
+    {
+      "label": "CLI unknown argument",
+      "args": [
+        "tool.py",
+        "--unsupported-migration-test"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    }
+  ]
+}
